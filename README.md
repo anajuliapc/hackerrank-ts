@@ -1,1 +1,1 @@
-Typescript solution for Hackerrank problem: https://www.hackerrank.com/challenges/counting-valleys
+Repository containing solutions for Hackerrank in TypeScript
