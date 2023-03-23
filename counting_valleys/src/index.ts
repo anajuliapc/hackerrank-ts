@@ -1,7 +1,7 @@
 'use strict';
 
 import { WriteStream, createWriteStream } from "fs";
-import { countingValleys } from "./countingValleys";
+import { countingValleys } from "./counting-valleys";
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 

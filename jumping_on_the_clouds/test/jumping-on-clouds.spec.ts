@@ -1,4 +1,4 @@
-import { jumpingOnClouds } from '../src/jumpingOnClouds'
+import { jumpingOnClouds } from '../src/jumping-on-clouds'
 
 describe('TDD for JumpingOnClouds problem', () => {
   test('Input 0', () => {
