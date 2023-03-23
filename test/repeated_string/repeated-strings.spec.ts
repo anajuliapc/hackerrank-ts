@@ -1,4 +1,4 @@
-import { repeatedString } from '../src/repeated-string';
+import { repeatedString } from '../../src/repeaded_string/repeated-string';
 
 describe('Repeated Strings test suite', () => {
   test('Input 0', () => {
