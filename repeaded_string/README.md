@@ -1,0 +1,1 @@
+TypeScript solution for Hackerrank problem: https://www.hackerrank.com/challenges/repeated-string
