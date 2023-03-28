@@ -4,7 +4,7 @@ export function countingValleys(steps: number, path: string): number {
   let seaLevel = 0;
 
   for (let i = 0; i < steps; i++) {
-    const currChar = path.charAt(i)
+    const currChar = path.charAt(i);
     if (currChar === 'U') {
       seaLevel++;
       if (seaLevel === 0) {
@@ -16,5 +16,6 @@ export function countingValleys(steps: number, path: string): number {
     }
   }
 
+  console.log('valleyCount: ', valleyCount);
   return valleyCount;
 }

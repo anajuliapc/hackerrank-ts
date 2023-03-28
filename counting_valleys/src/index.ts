@@ -1,52 +1,37 @@
-'use strict';
+import * as readline from 'readline';
+import * as R from 'ramda';
+import { countingValleys } from './counting-valleys';
 
-import { WriteStream, createWriteStream } from "fs";
-import { countingValleys } from "./counting-valleys";
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-let inputString: string = '';
 let inputLines: string[] = [];
 let currentLine: number = 0;
 
-process.stdin.on('data', function (inputStdin: string): void {
-  inputString += inputStdin;
-});
+rl.on('line', (line: string) => {
+  if (R.isEmpty(line)) {
+    main();
+  }
 
-process.stdin.on('end', function (): void {
-  inputLines = inputString.split('\n');
-  inputString = '';
-
-  main();
+  inputLines.push(line);
 });
 
 function readLine(): string {
   return inputLines[currentLine++];
 }
 
-/*
- * Complete the 'countingValleys' function below.
- *
- * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER steps
- *  2. STRING path
- */
-
-
-
 function main() {
-  const ws: WriteStream = createWriteStream(process.env['OUTPUT_PATH']!);
-
   const steps: number = parseInt(readLine().trim(), 10);
+  console.log(steps);
 
   const path: string = readLine();
+  console.log('path: ', path);
 
   const result: number = countingValleys(steps, path);
+  console.log(result);
 
-  ws.write(result + '\n');
-
-  ws.end();
+  rl.write(result + '\n');
+  rl.close();
 }
-export { countingValleys };
-
